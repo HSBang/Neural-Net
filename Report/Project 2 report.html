@@ -1,0 +1,207 @@
+<html>
+<head>
+<title> CS440/640 Homework Template: HW[x] Student Name [xxx]  </title>
+<style>
+<!--
+body{
+font-family: 'Trebuchet MS', Verdana;
+}
+p{
+font-family: 'Trebuchet MS', Times;
+margin: 10px 10px 15px 20px;
+}
+h3{
+margin: 5px;
+}
+h2{
+margin: 10px;
+}
+h1{
+margin: 10px 0px 0px 20px;
+}
+div.main-body{
+align:center;
+margin: 30px;
+}
+hr{
+margin:20px 0px 20px 0px;
+}
+-->
+</style>
+</head>
+
+<body>
+<center>
+<a href="http://www.bu.edu"><img border="0" src="http://www.cs.bu.edu/fac/betke/images/bu-logo.gif"
+width="119" height="120"></a>
+</center>
+
+<h1>Project 2</h1>
+<p> 
+ Course name:CS440/640<br>
+ Project 2<br>
+ Name:Omayr Abdelgany<br>
+ Team members:Chang Gao, Lai Wei, Shirui Ye<br>
+ Team name:Nope <br>
+ Due Date:02.22.16 
+</p>
+
+
+<div class="main-body">
+<hr>
+<h2> Problem Definition </h2>
+<p>
+In this project, we learn how to implement a basic neural network. According to what we have learned in class, we use the formulas from class along with the template from lab4 to get started on our compute_cost and predict functions, providing minor alterations. The most significant portion of this project is the creation of the fit function, which implements back propagation. Our edits to the lab template are made to account for hidden layers.
+
+</p>
+
+<hr>
+<h2> Method and Implementation </h2>
+<p>
+In our implementation of the basic neural net, we edited the lab 4 template to account for hidden layers and created the fit function to graph our results.
+</p>
+<p>
+There are three major functions used in our program:
+Compute_cost: We first implement forward propagation in this method and then calculate the cross-entropy loss to determine the cost of the neural net.<br>
+Predict: This method is the easiest one among those three. We simply use forward propagation to make a prediction based on current model parameters.<br>
+Fit: This is the most important and difficult method among all. Using the method disscussed in the article "Implementing a Neural Network from Scratch in Python: An Introduction". We are able to implement a good fit function using forward propagation, back propagation, and updating the model parameters by using gradients.
+</p>
+ 
+<h2> My contribution </h2>
+<p>
+I provided significant contribution in the coding of all functions as well the answering of the lab questions and the production of the experiment images.
+</p>
+
+<h2> Experiments and Results</h2>
+<p>
+
+</p>
+
+<p>
+<table>
+<tr>
+   <td>Q1.</td>
+</tr>
+<tr> 
+  <td><img src="Linear_Original.png"> </td>
+  <td><img src="Q1_R.png"></td>
+</tr> 
+<tr>
+  <td>Answer for Q1: Shown above.</td>
+</tr>
+
+
+<tr>
+   <td>Q2</td>
+</tr>
+<tr>
+   <td><img src="Q2_O.png"></td>
+   <td><img src="Q2_Nonlinear.png"></td> 
+</tr> 
+<tr>
+  <td>Answer for Q2: The 2-layer neural network model cannot learn non-linear decision boundaries. This is because the non-linear decisions require one or more hidden layers in order to increase the accuracy of the output. The non-linear decision obviously can not be represented by a single line. Instead, it requires a plane to show the output geometrically. For example, while the logical operation AND and OR can be learned by linear model, the XOR cannot. 
+ </td>
+</tr>
+
+
+<tr>
+  <td>Q3</td>
+</tr>
+<tr>
+  <td><img src="Q3_Linear.png"></td>
+  <td><img src="Q3_Nonlinear.png"></td>
+</tr>
+<tr>
+  <td>Answer for Q3: The 3-layer neural network model can learn non-linear decision boundaries. As illustrated above, as the number of hidden layers      increases, the accuracy will increase correspondingly. For the given data, by increasing the number of nodes in the hidden layer will give a   good      result. Here we have a good fit on both the linear (left) and nonlinear (right) data sets.
+  </td>
+</tr>
+
+
+<tr>
+  <td>Q4</td>
+</tr>
+<tr>
+  <td><img src="Q4_(0.01).png"> </td> 
+  <td><img src="Q4_(0.1).png"></td>
+</tr> 
+<tr>
+   <td>Answer for Q4: Theoretically, the larger the learning rate is, the larger the weight changes on each epoch, and thus the quicker the network learns. However, the learning rate also affect the stability. When the learning rate gets too large, the oscillation of weights might occur. In the above image on the left, we have a learning rate of 0.01. When we change it to 0.1 (on the right) we lose stability and our program produces a linear fit.
+   </td>
+</tr>
+
+
+
+<tr>
+  <td>Q5</td>
+</tr>
+<tr>
+<tr>
+  <td><img src="Q5_4nodes.png"> </td> 
+  <td><img src="Q5_6nodes.png"></td>
+</tr> 
+<tr>
+   <td>Answer for Q5: Theoretically the more nodes the hidden layer has, the more accurate the curve fit. However, when there are too many nodes, overfitting might occur. On the left, we show 4 nodes in the hidden layer, while on the right we have 6. You can see that overfitting occurs on the right.
+
+</td>
+</tr>
+
+
+<tr>
+  <td>Q6</td>
+</tr>
+<tr>
+   <td>Answer for Q6:. Overfitting is a phenomenon that occurs when the model does not generalize the data well. The 3 ways to reduce overfitting are: <br>1) regularization. This modifies the objective function that we minimize by adding additional terms that penalize large weights. <br>2) Max norm constraints. These constraints enforce an absolute upper bound on the magnitude of the incoming weight vetoer for every neuron and use projected gradient descent to enforce the constraint. <br>3) Dropout. This method prevents the network from becoming too dependent on any on (or any small combination) of neurons by keeping a neuron active with some probability or setting it to zero otherwise. <br>
+(http://www.kdnuggets.com/2015/04/preventing-overfitting-neural-networks.html)
+</td>
+</tr>
+
+
+<tr>
+  <td>Q7</td>
+</tr>
+<tr>
+<tr>
+  <td><img src="Q7_Reg.png"> </td> 
+  <td><img src="Q7_NoReg.png"></td>
+</tr> 
+<tr>
+   <td>Answer for Q7: L2 regularization reduces overfitting by adding 1/2 (lambda)w^2 to the error function for every weight w. As illustrated above, the curve of the left image has a more obvious pattern due to regularization. The curve on the right image has a less obvious pattern due to a lack of regularization. In reality, the appropriately fitted curve will reduce the amount of work it takes to figure out the model for the data, as shown above. </td>
+</tr>
+
+
+</table>
+</p>
+
+
+
+<hr>
+<h2> Discussion </h2>
+<p> 
+Discuss your method and results:
+<ul>
+<li>Strengths:Our implementation of the fit method can handle unlimited numbers of layers. The more layers we input, the more accurate result we will have and the stronger learning ability the AI has. </li>
+<li>Weaknesses: The program sometimes performs unstable.</li>
+</ul>
+</p>
+
+<hr>
+
+
+
+<h2> Credits and Bibliography </h2>
+<p>
+Works Cited:
+Britz, Denny. "Implementing a Neural Network from Scratch in Python, An Introduction." WildML. N.p., 3 Sept. 2015. 
+Web. 21 Feb. 2016.
+</p>
+
+<p>
+Work with Lai Wei, Shirui Ye and Chang Gao
+</p>
+<hr>
+</div>
+</body>
+
+<div id="footer"></div>
+
+</html>
